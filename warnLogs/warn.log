@@ -1,0 +1,96 @@
+[11:43:21:411] [WARN] - org.springframework.boot.actuate.endpoint.EndpointId.logWarning(EndpointId.java:135) - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+[11:43:22:689] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[11:43:24:743] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[11:43:28:371] [WARN] - com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:68) - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+[11:47:16:573] [WARN] - org.springframework.boot.actuate.endpoint.EndpointId.logWarning(EndpointId.java:135) - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+[11:47:17:788] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[11:47:19:917] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[11:47:25:299] [WARN] - com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:68) - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+[11:48:20:077] [WARN] - org.springframework.boot.actuate.endpoint.EndpointId.logWarning(EndpointId.java:135) - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+[11:48:21:303] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[11:48:23:305] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[11:48:26:737] [WARN] - com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:68) - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+[11:48:30:717] [ERROR] - org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler.handleError(TaskUtils.java:96) - Unexpected error occurred in scheduled task.
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'introduction' at row 1
+### The error may involve top.harvie.ProjectTeam.dao.mapper.NavigationMapper.add-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO navigation(name,time,requirement,introduction,applyway,award,addition,img,readed,status,creattime) VALUES(?,?,?,?,?,?,?,?,?,?,?)
+### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'introduction' at row 1
+; Data truncation: Data too long for column 'introduction' at row 1; nested exception is com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'introduction' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:104) ~[spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72) ~[spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81) ~[spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81) ~[spring-jdbc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy142.insert(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:58) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy148.add(Unknown Source) ~[?:?]
+	at top.harvie.ProjectTeam.service.SpiderService.downloadHtmlDetail(SpiderService.java:67) ~[classes/:?]
+	at top.harvie.ProjectTeam.service.SpiderService.downloadHtml(SpiderService.java:41) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93) [spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'introduction' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:970) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:387) ~[mysql-connector-java-8.0.15.jar:8.0.15]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.2.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.2.0.jar:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy196.execute(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185) ~[mybatis-3.4.6.jar:3.4.6]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	... 20 more
+[11:51:52:185] [WARN] - org.springframework.boot.actuate.endpoint.EndpointId.logWarning(EndpointId.java:135) - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+[11:51:53:549] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[11:51:55:767] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[11:51:59:964] [WARN] - com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:68) - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+[11:57:47:585] [WARN] - org.springframework.boot.actuate.endpoint.EndpointId.logWarning(EndpointId.java:135) - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+[11:57:48:807] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[11:57:50:797] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[11:57:54:878] [WARN] - com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:68) - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+[12:00:08:118] [WARN] - org.springframework.boot.actuate.endpoint.EndpointId.logWarning(EndpointId.java:135) - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+[12:00:09:465] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[12:00:11:607] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[12:00:14:811] [WARN] - com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:68) - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+[12:52:41:154] [WARN] - org.springframework.boot.actuate.endpoint.EndpointId.logWarning(EndpointId.java:135) - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+[12:52:42:370] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[12:52:44:376] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[12:52:48:218] [WARN] - com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:68) - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+[13:35:04:926] [WARN] - org.springframework.boot.actuate.endpoint.EndpointId.logWarning(EndpointId.java:135) - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+[13:35:06:210] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[13:35:08:182] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[13:35:11:925] [WARN] - com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:68) - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+[13:35:26:595] [WARN] - org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException(AbstractHandlerExceptionResolver.java:197) - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'userid' is not present]
+[13:35:55:606] [WARN] - org.springframework.boot.actuate.endpoint.EndpointId.logWarning(EndpointId.java:135) - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+[13:35:56:810] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[13:35:58:854] [WARN] - com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121) - No URLs will be polled as dynamic configuration sources.
+[13:36:03:021] [WARN] - com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:68) - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
